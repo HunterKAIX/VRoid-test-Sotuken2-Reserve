@@ -16,7 +16,7 @@ public class Gekisai1StartandStop : MonoBehaviour
         }
 
         AnimatorStateInfo state1 = anim.GetCurrentAnimatorStateInfo(0);
-        if (state1.IsName("Countdown"))
+        if (state1.IsName("Countdown1"))
         {
             anim.SetBool("Gekisai1Shift", false);
         }
