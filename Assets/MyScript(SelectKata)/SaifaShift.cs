@@ -5,6 +5,6 @@ public class SaifaShift : MonoBehaviour
 {
     public void OnClickSaifaShiftButton()
     {
-        SceneManager.LoadScene("Saifa");
+        SceneManager.LoadScene("Saifa mirror");
     }
 }

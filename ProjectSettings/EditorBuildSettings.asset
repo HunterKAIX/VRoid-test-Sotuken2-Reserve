@@ -9,12 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectKata.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Gekisai1.unity
+    path: Assets/Scenes/Gekisai1 mirror.unity
     guid: 1b82fe0b517241e428929e25fbcf444b
   - enabled: 1
-    path: Assets/Scenes/Gekisai2.unity
+    path: Assets/Scenes/Gekisai2 mirror.unity
     guid: 8c0fe8d015338a3478c59922f9217bad
   - enabled: 1
-    path: Assets/Scenes/Saifa.unity
+    path: Assets/Scenes/Saifa mirror.unity
     guid: ca40a641614c4ea41aaeb5d209202f0b
+  - enabled: 1
+    path: Assets/Scenes/Gekisai1.unity
+    guid: b3f5ddee4f39b8a41bf60257a99c5b7c
+  - enabled: 1
+    path: Assets/Scenes/Gekisai2.unity
+    guid: e06b61399158da24ba115a2e47b8fb5f
+  - enabled: 1
+    path: Assets/Scenes/Saifa.unity
+    guid: 69195ee5f58814e469879bf49c0365b3
   m_configObjects: {}

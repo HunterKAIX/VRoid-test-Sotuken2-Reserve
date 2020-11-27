@@ -8,7 +8,9 @@ public class MyVRoidRightHandTransform : MonoBehaviour
     public GameObject headTeacherObject;
     public GameObject rightHandTeacherObject;
 
-    public GameObject RightSpeaker;
+    public GameObject rightSpeaker;
+
+    [SerializeField] GameObject rightHandQuad;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class MyVRoidRightHandTransform : MonoBehaviour
         headTeacherObject = GameObject.Find("TeacherVRoid/Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head");
         rightHandTeacherObject = GameObject.Find("TeacherVRoid/Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_R_Shoulder/J_Bip_R_UpperArm/J_Bip_R_LowerArm/J_Bip_R_Hand");
 
-        RightSpeaker = GameObject.Find("MyVRoid/Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head/R_Speaker");
+        rightSpeaker = GameObject.Find("MyVRoid/Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head/R_Speaker");
 
     }
 
@@ -41,17 +43,22 @@ public class MyVRoidRightHandTransform : MonoBehaviour
 
         Vector3 TeacherComparison = rightHandTeacherPos - headTeacherPos;
 
-        // ↓にPlayerComparisonとTeacherComparisonを比較するものを作る
-        // if ((TeacherComparison - PlayerComparison).magnitude > 0.5)
-        // {
-
-        // }
-
+        //↓PlayerComparisonとTeacherComparisonを比較する
+        if ((TeacherComparison - PlayerComparison).magnitude > 0.15)
+        {
+            rightSpeaker.GetComponent<Speaker>().ComparisonSpeaker();
+            rightHandQuad.SetActive(true);
+        }
+        else
+        {
+            rightHandQuad.SetActive(false);
+        }
+        
         //↓のコードで音が鳴るのは確認
         //よって↑の条件を整えれば音はなる。
-        if (Input.GetKey(KeyCode.RightArrow))
+        /*if (Input.GetKey(KeyCode.RightArrow))
         {
-            RightSpeaker.GetComponent<Speaker>().ComparisonSpeaker();
-        }
+           rightSpeaker.GetComponent<Speaker>().ComparisonSpeaker();
+        }*/
     }
 }

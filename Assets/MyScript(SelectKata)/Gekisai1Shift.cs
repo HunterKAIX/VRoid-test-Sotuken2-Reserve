@@ -1,11 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Gekisai1Shift : MonoBehaviour
 {
+    [SerializeField] Toggle Switch;
+
+
     public void OnClickGekisai1ShiftButton()
     {
-        SceneManager.LoadScene("Gekisai1");
+        if (Switch.isOn)
+        {
+            SceneManager.LoadScene("Gekisai1 mirror");
+        }
+        else
+        {
+            SceneManager.LoadScene("Gekisai1");
+        }
     }
 
 }

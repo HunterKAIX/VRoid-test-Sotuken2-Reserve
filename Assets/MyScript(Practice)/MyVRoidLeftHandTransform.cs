@@ -10,6 +10,8 @@ public class MyVRoidLeftHandTransform : MonoBehaviour
 
     public GameObject leftSpeaker;
 
+    [SerializeField] GameObject leftHandQuad;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,17 +43,22 @@ public class MyVRoidLeftHandTransform : MonoBehaviour
 
         Vector3 TeacherComparison = leftHandTeacherPos - headTeacherPos;
 
-        // ↓にPlayerComparisonとTeacherComparisonを比較するものを作る
-        // if ((TeacherComparison - PlayerComparison).magnitude > 0.5)
-        // {
-
-        // }
+        // ↓PlayerComparisonとTeacherComparisonを比較する
+        if ((TeacherComparison - PlayerComparison).magnitude > 0.15)
+        {
+         leftSpeaker.GetComponent<Speaker>().ComparisonSpeaker();
+         leftHandQuad.SetActive(true);
+        }
+        else
+        {
+         leftHandQuad.SetActive(false);
+        }
 
         //↓のコードで音が鳴るのは確認
         //よって↑の条件を整えれば音はなる。
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            leftSpeaker.GetComponent<Speaker>().ComparisonSpeaker();
-        }
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    leftSpeaker.GetComponent<Speaker>().ComparisonSpeaker();
+        //}
     }
 }

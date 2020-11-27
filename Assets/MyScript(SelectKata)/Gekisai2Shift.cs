@@ -5,6 +5,6 @@ public class Gekisai2Shift : MonoBehaviour
 {
     public void OnClickGekisai2ShiftButton()
     {
-        SceneManager.LoadScene("Gekisai2");
+        SceneManager.LoadScene("Gekisai2 mirror");
     }
 }
